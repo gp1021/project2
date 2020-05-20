@@ -1,11 +1,15 @@
 package riddlersLabyrinth;
 
 public class LabString {
+	//instance variables
 	private String _s = "";
 	private boolean[][] _l = new boolean[11][11]; 
+	//constructor
 	public LabString() {
 		
 	}
+	
+	//updates the lab each round, setting each position to the appropriate text character
 	public String updateLab(LabDesign l, LabPlayer p, LabQuestion q1, LabQuestion q2, LabQuestion q3, LabQuestion q4, LabQuestion q5, LabQuestion q6) {
 		_s = "";
 		_l = l.getLab();
