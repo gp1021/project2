@@ -1,5 +1,6 @@
 package riddlersLabyrinth;
 
+//allows the userlabyrinth class to run and bring up the jpane
 public class MainLabyrinth {
 	public static void main(String[] args) {
 		Lab3();
