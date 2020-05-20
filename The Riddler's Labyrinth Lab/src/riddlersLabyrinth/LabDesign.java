@@ -1,16 +1,18 @@
 package riddlersLabyrinth;
 
 public class LabDesign {
+	//instance variables
 	private boolean[][] _lab;
 	public static final LabPosition end = new LabPosition(10, 5);
 	
+	//gets a random position in the ladyrinth for questions to spawn at
 	public LabPosition getQPos() {
 		int x = (int) (Math.random() * 12);
 		int[] row = {7, 3, 3, 1, 1, 6, 6, 9, 9, 3, 7, 5};
 		int[] col = {5, 3, 7, 1, 9, 1, 9, 5, 9, 5, 7, 9};
 		return new LabPosition(row[x], col[x]);
 	}
-	
+	//holds the design of the labyrinth as a 2d boolean 
 	public LabDesign() {
 		//true = wall
 		//false = space
@@ -28,6 +30,7 @@ public class LabDesign {
 			_lab = lab;
 		
 		}
+	//getters
 	public boolean[][] getLab() { return _lab; }
 	
 	public LabPosition getEnd() { return end; }
