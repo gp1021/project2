@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class LabQuestion {
+	//instance variables
 	private LabPosition _pos;
 	int x;
 	ArrayList<String> questions = new ArrayList<String>();
+	
+	//creates the array of questions that the player must answer
 	public ArrayList<String> makeArray() {
 		questions.add("scissors : cut :: pen : ___ ?");
 		questions.add("What is 5 * 9 + 6 * 2 / 3? (don't write the number as a word)");
@@ -15,10 +18,10 @@ public class LabQuestion {
 				+ "1 3 3 1\n"
 				+ "What's the next line? (Don't include spaces)");
 		questions.add("What is the only letter in scrabble that is worth 5 points?");
-		questions.add("What’s the most malleable metal?");
+		questions.add("Whatâ€™s the most malleable metal?");
 		questions.add("What are moving left to right, right now?");
 		questions.add("What do you throw out when you want to use it, but take in \n"
-				+ "when you don’t want to use it?");
+				+ "when you donâ€™t want to use it?");
 		questions.add("Who is the Roman equivalent of the Greek God Ares?");
 		questions.add("What English word has 3 consecutive double letters?");
 		questions.add("What is it that lives if it is fed, and dies if you give it a drink?");
@@ -26,12 +29,15 @@ public class LabQuestion {
 		questions.add("Who has won the most Oscars for acting?");
 		return questions;
 	}
+	
+	//grabs one of the questions at random and puts it onto the labyrinth at one of the saved positions 
 	public LabQuestion(LabDesign l) {
 		x = (int) Math.random() * 9;
 		_pos = new LabPosition(l.getQPos().getRow(), l.getQPos().getCol());
 	}
+	//getters
 	public LabPosition getPos() { return _pos; }
-	
+	//shuffles and grabs a question, then removes it from the list
 	public String getQuestion() {
 		/*ArrayList<String> questions = new ArrayList<String>();
 		questions.add("scissors : cut :: pen : ___ ?");
@@ -41,10 +47,10 @@ public class LabQuestion {
 				+ "1 3 3 1\n"
 				+ "What's the next line? (Don't include spaces)");
 		questions.add("What is the only letter in scrabble that is worth 5 points?");
-		questions.add("What’s the most malleable metal?");
+		questions.add("Whatâ€™s the most malleable metal?");
 		questions.add("What are moving left to right, right now?");
 		questions.add("What do you throw out when you want to use it, but take in \n"
-				+ "when you don’t want to use it?");
+				+ "when you donâ€™t want to use it?");
 		questions.add("Who is the Roman equivalent of the Greek God Ares?");
 		questions.add("What English word has 3 consecutive double letters?");
 		questions.add("What is it that lives if it is fed, and dies if you give it a drink?");
@@ -57,6 +63,7 @@ public class LabQuestion {
 		
 	}
 	
+	//gets the corresponding answer to the question 
 	public String getAnswer(String s) {
 		if (s.equals("scissors : cut :: pen : ___ ?")) {
 			return "write";
@@ -69,12 +76,12 @@ public class LabQuestion {
 			return "14641";
 		} else if (s.equals("What is the only letter in scrabble that is worth 5 points?")) {
 			return "k";
-		} else if (s.equals("What’s the most malleable metal?")) {
+		} else if (s.equals("Whatâ€™s the most malleable metal?")) {
 			return "gold";
 		} else if (s.equals("What are moving left to right, right now?")) {
 			return "my eyes";
 		} else if (s.equals("What do you throw out when you want to use it, but take in \n"
-				+ "when you don’t want to use it?")) {
+				+ "when you donâ€™t want to use it?")) {
 			return "anchor";
 		} else if (s.equals("Who is the Roman equivalent of the Greek God Ares?")) {
 			return "Mars";
