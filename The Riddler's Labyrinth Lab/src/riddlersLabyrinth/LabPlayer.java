@@ -1,14 +1,20 @@
 package riddlersLabyrinth;
 
 public class LabPlayer {
+	//instance variables
 	private int _r;
 	private int _c;
 	private LabPosition _curPos;
 	
+	//constructor
+	//puts the player at the center of the labyrinth
 	public LabPlayer() {
 		_curPos = new LabPosition(5, 5);
 	}
 	
+	//method to move the player in the direction they choose based on the button pressed
+	//controls the help and exit buttons too
+	//blocks the player from moving into a wall and sends a message instead
 	public LabPosition move(LabDesign l, int buttons, WindowLabyrinth w) {
 		if (buttons == 0) {
 			if (l.getLab()[_curPos.getRow()-1][_curPos.getCol()]) {
@@ -50,6 +56,7 @@ public class LabPlayer {
 		return _curPos;
 	}
 	
+	//getters
 	public LabPosition getPos() { return _curPos; }
 	
 	public int getRow() { return _r; }
