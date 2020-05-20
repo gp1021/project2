@@ -3,6 +3,7 @@ package riddlersLabyrinth;
 import javax.swing.*;
 
 public class UserLabyrinth {
+	//instance variables
 	private WindowLabyrinth _w;
 	private LabDesign _l;
 	private LabPlayer _p;
@@ -15,6 +16,8 @@ public class UserLabyrinth {
 	private LabString _s;
 	public static final String[] BUTTONS = {"North", "South", "West", "East", "Help", "Exit"};
 	
+	//constructor
+	//brings together th game mechanics and how the player sees the game
 	public UserLabyrinth() {
 		ImageIcon w = new ImageIcon(getClass().getResource("winscreen.png"));
 		_w = new WindowLabyrinth();
@@ -81,6 +84,7 @@ public class UserLabyrinth {
 		_w.msg1("Congratulations, you've beat the Riddler.");
 		//_w.msg1(_s.updateLab(_l, _p, _q)); labyrinth shell
 	}
+	//checks if two positions are the same
 	public boolean checkEqual(LabPosition x, LabPosition y) {
 		if ((x.getRow() == y.getRow()) && (x.getCol() == y.getCol())) {
 			return true;
@@ -89,6 +93,7 @@ public class UserLabyrinth {
 		}
 	}
 	
+	//asks the user a question, and then checks if they're answer is correct
 	public void askQuestion() {
 		String question;
 		String answer;
@@ -163,6 +168,7 @@ public class UserLabyrinth {
 		}
 	}
 	
+	//shows extra message jpanes in the game
 	public void whispers() {
 		LabPosition a = new LabPosition(7, 3);
 		LabPosition b = new LabPosition(4, 1);
